@@ -193,6 +193,17 @@ function sendStartMenu(chatId) {
   bot.sendPhoto(chatId, thumbPath, { caption: startMessage, ...keyboard });
 }
 
+function sendMusic(chatId, musicUrl) {
+  const audio = {
+    audio: musicUrl,
+    title: 'Sample Music',
+    performer: 'Sample Artist',
+  };
+
+  bot.sendAudio(chatId, audio);
+}
+
+
 // Handling /start and /menu commands
 bot.onText(/\/start|\/menu/, (msg) => {
   const chatId = msg.chat.id;
